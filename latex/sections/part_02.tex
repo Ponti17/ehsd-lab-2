@@ -22,14 +22,14 @@ Confirm that jumper J3("Bounce sense to GND(QFN)") is in place. Connect probe 1 
 
 The measurement of the ground and VCC bounce for the QFN- and SOIC packages with one (\textit{1}) active output is shown in Figure \ref{fig:gnd_vcc_output_1}. The results are summarized in Table \ref{tab:output_1}.
 
-\begin{figure}[H]
+\begin{figure}[h]
     \centering
     \includegraphics[width=0.8\textwidth]{output_1.pdf}
     \caption{GND and VCC bounce for QFN- and SOIC packages with one (\textit{1}) active output.}
     \label{fig:gnd_vcc_output_1}
 \end{figure}
 
-\begin{table}[H]
+\begin{table}[h]
     \centering
     \begin{tabular}{l | r r}
         \toprule[1pt]
@@ -77,14 +77,14 @@ Confirm that jumper J3("Bounce sense to GND(QFN)") is in place. Connect probe 1 
 
 The measurement of the ground and VCC bounce for the QFN- and SOIC packages with three (\textit{3}) active output is shown in Figure \ref{fig:gnd_vcc_output_3}. The results are summarized in Table \ref{tab:output_3}.
 
-\begin{figure}[H]
+\begin{figure}[h]
     \centering
     \includegraphics[width=0.8\textwidth]{output_3.pdf}
     \caption{GND and VCC bounce for QFN- and SOIC packages with three (\textit{3}) active output.}
     \label{fig:gnd_vcc_output_3}
 \end{figure}
 
-\begin{table}[H]
+\begin{table}[h]
     \centering
     \begin{tabular}{l | r r}
         \toprule[1pt]
@@ -116,13 +116,13 @@ Confirm that jumper J3("Bounce sense to GND(QFN)") is in place. Connect probe 1 
 
 The measurement of the ground and VCC bounce for the QFN- and SOIC packages with seven (\textit{7}) active output is shown in Figure \ref{fig:gnd_vcc_output_7}. The results are summarized in Table \ref{tab:output_7}.
 
-\begin{figure}[H]
+\begin{figure}[h]
     \centering
     \includegraphics[width=0.8\textwidth]{output_7.pdf}
     \caption{GND and VCC bounce for QFN- and SOIC packages with seven (\textit{7}) active output.}
     \label{fig:gnd_vcc_output_7}
 \end{figure}
-\begin{table}[H]
+\begin{table}[h]
     \centering
     \begin{tabular}{l | r r}
         \toprule[1pt]
@@ -177,7 +177,7 @@ It was possible to get the inverter output to oscillate when both one and all ou
 
 The oscillation occurs because the inverter can act as a feedback system. When the input voltage, controlled by the potentiometer, is near the inverter's switching threshold, $V_{IH}$ or $V_{IL}$, small disturbances or noise, such as GND bounce, at the input can push the input into the undefiend area and cause the inverter to interpret it as the other logic value, cause a switch. This toggling can become self-sustaining, causing the inverter output to oscillate, as the output is fed back into the input, causing the input to switch back and forth between the two logic levels. In effect, this causes the inverter circuit to behave similarly to a ring oscillator. The difference in frequency and amplitude between the two situations can be explained by the number of outputs active. With all outputs active, the bounce is higher, causing the signal to cross the threshold quicker leading to a higher frequency. The amplitude is also higher, as the bounce is higher, causing the signal to cross the threshold with a higher amplitude.
 
-\begin{figure}[H]
+\begin{figure}[h]
     \centering
     \includegraphics[width=0.8\textwidth]{osci.pdf}
     \caption{Measured oscillations of the inverter output with one and all outputs active.}
