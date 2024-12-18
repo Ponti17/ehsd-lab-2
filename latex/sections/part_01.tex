@@ -1,6 +1,6 @@
 \documentclass[../main.tex]{subfiles}
 
-\graphicspath{{\subfix{../images/}}}
+\graphicspath{{\subfix{../imgs/}}}
 
 \begin{document}
 
@@ -172,5 +172,67 @@ The package parameters for both the QFN and SOIC packages are shown in Table \re
 \end{table}
 
 \newpage
+
+\subsection{Task 1.3}
+Simulate and document the voltages at the driver and receiving end on one of the switching outputs, as well as the quiet line. 
+\subsubsection{QFN Package}
+
+\begin{figure}[h]
+    \centering
+    \fbox{\includegraphics[width=0.9\textwidth]{qfn_sim_near_far.pdf}}
+    \caption{LTSpice simulation of a switching line on the QFN package.}
+    \label{fig:qfn_sim_near_far}
+\end{figure}
+\begin{figure}[h]
+    \centering
+    \fbox{\includegraphics[width=0.9\textwidth]{qfn_sim_quiet.pdf}}
+    \caption{LTSpice simulation of the quiet line on the QFN package.}
+    \label{fig:qfn_sim_quiet}
+\end{figure}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{r|c c}
+        \toprule[1pt]
+        \textbf{Outputs} & \textbf{Switching Line[V]} &\textbf{Quiet Line[V]} \\
+        \midrule
+        1  & 3.59  & 3.32 \\
+        3  & 4.13  & 3.69 \\
+        7  & 4.78  & 4.05  \\
+        \bottomrule[1pt]
+    \end{tabular}
+    \caption{Critical voltages for the QFN package}
+\end{table}
+
+\newpage
+
+\subsubsection{SOIC Package}
+
+\begin{figure}[h]
+    \centering
+    \fbox{\includegraphics[width=0.9\textwidth]{soic_sim_near_far.pdf}}
+    \caption{LTSpice simulation of a switching line on the SOIC package.}
+    \label{fig:soic_sim_near_far}
+\end{figure}
+\begin{figure}[h]
+    \centering
+    \fbox{\includegraphics[width=0.9\textwidth]{soic_sim_quiet.pdf}}
+    \caption{LTSpice simulation of the quiet line on the SOIC package.}
+    \label{fig:soic_sim_quiet}
+\end{figure}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{r|c c}
+        \toprule[1pt]
+        \textbf{Outputs} & \textbf{Switching Line[V]} &\textbf{Quiet Line[V]} \\
+        \midrule
+        1  & 4.34  & 3.37 \\
+        3  & 4.24  & 3.68 \\
+        7  & 4.22  & 4.01  \\
+        \bottomrule[1pt]
+    \end{tabular}
+    \caption{Critical voltages for the SOIC package}
+\end{table}
 
 \end{document}
