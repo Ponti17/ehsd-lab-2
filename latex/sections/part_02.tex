@@ -8,7 +8,7 @@
 
 \subsection{Task 1: VCC/GND bounce 1 output}
 
-Remove jumpers
+Remove jumpers:
 
 \begin{itemize}
     \item J1: Output 1Y1-4 enable (QFN)
@@ -24,12 +24,12 @@ Confirm that jumper J3: bounce sense to GND (QFN) is in place. Connect probe 1 t
 
 \solution
 
-The measurement of the ground and VCC bounce for the QFN- and SOIC packages with one (\textit{1}) active output is shown in Figure \ref{fig:gnd_vcc_output_1}. The results are summarized in Table \ref{tab:output_1}.
+The measurement of the ground and VCC bounce for the QFN- and SOIC packages with one active output is shown in Figure \ref{fig:gnd_vcc_output_1}. The results are summarized in Table \ref{tab:output_1}.
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.8\textwidth]{output_1.pdf}
-    \caption{GND and VCC bounce for QFN- and SOIC packages with one (\textit{1}) active output.}
+    \caption{GND and VCC bounce for QFN/SOIC packages with one active output.}
     \label{fig:gnd_vcc_output_1}
 \end{figure}
 
@@ -43,7 +43,7 @@ The measurement of the ground and VCC bounce for the QFN- and SOIC packages with
         SOIC            & 324.111   & 2365.217  \\
         \bottomrule[1pt]
     \end{tabular}
-    \caption{GND and VCC bounce for QFN and SOIC packages with one (\textit{1}) active output.}
+    \caption{GND and VCC bounce for QFN/SOIC packages with one active output.}
     \label{tab:output_1}
 \end{table}
 
@@ -67,19 +67,20 @@ With that mentioned we can now start comparing the results we've gotten from the
 
 \subsection{Task 2: VCC/GND bounce 3 outputs}
 
-Place jumper J1 ("Output 1y1-4 enable (QFN)"), J4 ("Output 1y1-4 enable (SOIC)"). Ensure J9 ("CLK fanout 1G enable") is removed, and that J8("CLK fanout 2G enable") is in place.
+Place jumpers:
 
-\vspace{10pt}
+\begin{itemize}
+    \item J1: Output 1Y1-4 enable (QFN)
+    \item J3: Bounce sense to GND (QFN)
+    \item J4: Output 1y1-4 enable (SOIC)
+    \item J8: CLK fanout 2G enable
+\end{itemize}
 
-Consult the circuit diagram - which channel (output) is now active on Driver QFN and Driver SOIC? Connect probe 2 to the active output probe point, and confirm the waveform is as expected. Use probe 2 as a trigger signal.
-
-\vspace{10pt}
-
-Confirm that jumper J3("Bounce sense to GND(QFN)") is in place. Connect probe 1 to P39("VCC/GND bounce QFN") and measure the ground bounce:
+Consult the circuit diagram. Which channel (output) is now active on Driver QFN and Driver SOIC? Connect probe 2 to the active output probe point, and confirm the waveform is as expected. Use probe 2 as a trigger signal. Connect probe 1 to P39 and measure the ground bounce:
 
 \solution
 
-The measurement of the ground and VCC bounce for the QFN- and SOIC packages with three (\textit{3}) active output is shown in Figure \ref{fig:gnd_vcc_output_3}. The results are summarized in Table \ref{tab:output_3}.
+The measurement of the ground and VCC bounce for the QFN- and SOIC packages with three active output is shown in Figure \ref{fig:gnd_vcc_output_3}. The results are summarized in Table \ref{tab:output_3}.
 
 \begin{table}[h]
     \centering
@@ -91,11 +92,14 @@ The measurement of the ground and VCC bounce for the QFN- and SOIC packages with
         SOIC            & 515.020   & 2041.107  \\
         \bottomrule[1pt]
     \end{tabular}
-    \caption{GND and VCC bounce for QFN and SOIC packages with three (\textit{3}) active outputs.}
+    \caption{GND and VCC bounce for QFN/SOIC packages with three active outputs.}
     \label{tab:output_3}
 \end{table}
 
-To evaluate the results, we again compare them to the minimum and maximum allowed values of 0.6 V and 2.2 V respectively. The QFN package stays within both thresholds but leaves only a margin of 101.976 mV for the VCC bounce, which is acceptable but close to being critical and could prove problematic in high-noise environments. The SOIC package however crosses the VCC bounce threshold with a bounce of 2041.107 mV. This however is still within the absolute thresholds of $V_IH$, leaving the chip operating at the edge of the noise margin, making functionality unreliable in high-noise environments and highly dependent on the individual chips output characteristics.
+To evaluate the results, we again compare them to the minimum and maximum allowed values of 0.6 V and 2.2 V respectively. The QFN package stays within both thresholds but leaves only a margin of 101.976 mV for the VCC bounce, which is acceptable but close to being critical and could prove problematic in high-noise environments.
+
+\vspace{10pt}
+The SOIC package however crosses the VCC bounce threshold with a bounce of 2041.107 mV. This however is still within the absolute thresholds of $V_IH$, leaving the chip operating at the edge of the noise margin, making functionality unreliable in high-noise environments and highly dependent on the individual chips output characteristics.
 
 \newpage
 
@@ -108,10 +112,7 @@ To evaluate the results, we again compare them to the minimum and maximum allowe
 
 \subsection{Task 3: VCC/GND bounce 7 outputs}
 
-Place all the jumpers on the left. Confirm from the schematic, that all outputs should be enabled. Connect probe 2 to the active output probe point, and confirm the waveform is as expected. Use probe 2 as a trigger signal.
-
-\vspace{10pt}
-Confirm that jumper J3("Bounce sense to GND(QFN)") is in place. Connect probe 1 to P39("VCC/GND bounce QFN") and measure the ground bounce:
+Place all the jumpers on the left. Confirm from the schematic, that all outputs should be enabled. Connect probe 2 to the active output probe point, and confirm the waveform is as expected. Use probe 2 as a trigger signal. Connect probe 1 to P39 and measure the ground bounce.
 
 \solution
 
@@ -127,7 +128,7 @@ The measurement of the ground and VCC bounce for the QFN- and SOIC packages with
         SOIC            & 782.609   & 1644.712  \\
         \bottomrule[1pt]
     \end{tabular}
-    \caption{GND and VCC bounce for QFN and SOIC packages with seven (\textit{7}) active outputs.}
+    \caption{GND and VCC bounce for QFN/SOIC packages with seven active outputs.}
     \label{tab:output_7}
 \end{table}
 
@@ -136,7 +137,7 @@ The measurement of the ground and VCC bounce for the QFN- and SOIC packages with
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.8\textwidth]{output_7.pdf}
-    \caption{GND and VCC bounce for QFN- and SOIC packages with seven (\textit{7}) active output.}
+    \caption{GND and VCC bounce for QFN/SOIC packages with seven active output.}
     \label{fig:gnd_vcc_output_7}
 \end{figure}
 

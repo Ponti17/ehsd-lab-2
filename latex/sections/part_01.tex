@@ -44,7 +44,7 @@ The lumped element model for the supply is seen in Figure \ref{fig:supply} and c
 
 \subsubsection{Driver/Receiver Model}
 
-Next we model the driver, receiver and transmission line inbetween. Shown in Figure \ref{fig:driver} and summarized in Table \ref{tab:driver}. The buffer likely has a \textit{totem-pole} CMOS pair as the output stage. We model this with switches. The switches have an on resistance of $R_{on} = 1\si{\Omega}$ and an off resistance of $R_{off} = 10^6\si{\Omega}$. The driver has an output capacitance of $C_{driver} = 6.03\si{pF}$ and the receiver has an input capacitance of $C_{receiver} = 4.21\si{pF}$. The time delay of the transmission is determined from the propagation speed listed in assignment 1, $\text{TD} = 0.1 \si{m} / 1.59 * 10^8\si{m/s} = 0.629 \si{ns}$. We assume the transmission line has $Z_0 = 50\si{\Omega}$.
+Next we model the driver, receiver and transmission line inbetween. Shown in Figure \ref{fig:driver} and summarized in Table \ref{tab:driver}. The buffer likely has a \textit{totem-pole} CMOS pair as the output stage. We model this with switches. The switches have an on resistance of $R_{on} = 1\si{\Omega}$ and an off resistance of $R_{off} = 10^6\si{\Omega}$.
 
 \begin{figure}[h]
     \centering
@@ -113,7 +113,7 @@ Determine from the IBIS model for the driver/receiver IC the inductances of the 
 
 \solution
 
-The package parameters for both the QFN and SOIC packages are shown in Table \ref{tab:pkg-params}.
+Most of the parameters are found from the IBIS file. The package parameters for both the QFN and SOIC packages are shown in Table \ref{tab:pkg-params}. The driver has an output capacitance of $C_{driver} = 6.03\si{pF}$ and the receiver has an input capacitance of $C_{receiver} = 4.21\si{pF}$. The time delay of the transmission is determined from the propagation speed listed in assignment 1, $\text{TD} = 0.1 \si{m} / 1.59 * 10^8\si{m/s} = 0.629 \si{ns}$. We assume the transmission line has $Z_0 = 50\si{\Omega}$.
 
 \begin{table}[h]
     \centering
