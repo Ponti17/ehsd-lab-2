@@ -174,9 +174,11 @@ Simulate and document the voltages at the driver and receiving end on one of the
 
 \subsubsection{QFN Package}
 
-\textit{Add text here.}
-\lipsum[2]
+On the simulations we see that the switching line on the driver end has some overshoot but stabilizes quickly compared to the voltage on the receiving end. 
+The simulation also shows that the voltage overshoot on the receiving end is higher than the driver end, and oscilates around what would be the expected 
+steady-state voltage, increasingly with the amount of enabled outputs. 
 
+The quiet line shows similar behavior when increasing the amount of outputs, with increasing voltage spikes around switching times.
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.9\textwidth]{qfn_sim_near_far.pdf}
@@ -209,8 +211,12 @@ Simulate and document the voltages at the driver and receiving end on one of the
 
 \subsubsection{SOIC Package}
 
-\textit{Add text here.}
-\lipsum[2]
+The SOIC package simulations shows different voltage curves over time. Here, the square wave is more visible,
+and the voltage overshoots are more smoothed, since the reaction is slower. 
+On the figures we can see that the oscillations becomes more elongated with the amount of enabled outputs, damping the higher
+frequency components in the reaction. 
+
+The critical voltages are somewhat higher than the QFN package, but we see a similar behavior.
 
 \begin{figure}[h]
     \centering
