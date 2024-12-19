@@ -174,11 +174,14 @@ Simulate and document the voltages at the driver and receiving end on one of the
 
 \subsubsection{QFN Package}
 
-On the simulations we see that the switching line on the driver end has some overshoot but stabilizes quickly compared to the voltage on the receiving end. 
-The simulation also shows that the voltage overshoot on the receiving end is higher than the driver end, and oscilates around what would be the expected 
-steady-state voltage, increasingly with the amount of enabled outputs. 
+During simulation we plot the near and far end of the transmission line i.e. right after the lumped element of the driver and right before the receiver. In addition we also plot the quiet line. The near and far end of the transmission line is shown in Figure \ref{fig:qfn_sim_near_far} and the quiet line is shown in Figure \ref{fig:qfn_sim_quiet}.
+We see that the switching line on the driver end has some overshoot but stabilizes quickly compared to the voltage on the receiving end. 
+The simulation also shows that the voltage overshoot on the receiving end is higher than the driver end, and oscillates around what would be the 
+expected steady-state voltage, increasingly with the amount of enabled outputs. 
 
+\vspace{10pt}
 The quiet line shows similar behavior when increasing the amount of outputs, with increasing voltage spikes around switching times.
+
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.9\textwidth]{qfn_sim_near_far.pdf}
@@ -186,14 +189,14 @@ The quiet line shows similar behavior when increasing the amount of outputs, wit
     \label{fig:qfn_sim_near_far}
 \end{figure}
 
-\newpage
-
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.9\textwidth]{qfn_sim_quiet.pdf}
     \caption{LTSpice simulation of the quiet line on the QFN package.}
     \label{fig:qfn_sim_quiet}
 \end{figure}
+
+\newpage
 
 \begin{table}[h]
     \centering
@@ -203,7 +206,7 @@ The quiet line shows similar behavior when increasing the amount of outputs, wit
         \midrule
         1  & 3.59  & 3.32 \\
         3  & 4.13  & 3.69 \\
-        7  & 4.78  & 4.05  \\
+        7  & 4.78  & 4.05 \\
         \bottomrule[1pt]
     \end{tabular}
     \caption{Critical voltages for the QFN package}
@@ -220,16 +223,14 @@ The critical voltages are somewhat higher than the QFN package, but we see a sim
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.9\textwidth]{soic_sim_near_far.pdf}
+    \includegraphics[width=0.85\textwidth]{soic_sim_near_far.pdf}
     \caption{LTSpice simulation of a switching line on the SOIC package.}
     \label{fig:soic_sim_near_far}
 \end{figure}
 
-\newpage
-
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.9\textwidth]{soic_sim_quiet.pdf}
+    \includegraphics[width=0.85\textwidth]{soic_sim_quiet.pdf}
     \caption{LTSpice simulation of the quiet line on the SOIC package.}
     \label{fig:soic_sim_quiet}
 \end{figure}
