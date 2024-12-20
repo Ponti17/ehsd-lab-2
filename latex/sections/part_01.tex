@@ -198,19 +198,41 @@ The quiet line shows similar behavior when increasing the amount of outputs, wit
 
 \newpage
 
+The ground and VCC bounce for the quiet line is shown in Table \ref{tab:qfn_bounce}. \textit{Were not really sure what voltage values you want for the switching line, so we will just summarize the maximums in a table.}
+
 \begin{table}[h]
     \centering
-    \begin{tabular}{r|c c}
+    \begin{tabular}{l | r r}
         \toprule[1pt]
-        \textbf{Outputs} & \textbf{Switching Line[V]} &\textbf{Quiet Line[V]} \\
+        \textbf{Num. of Outputs} & \textbf{GND [V]} & \textbf{VCC [V]} \\
         \midrule
-        1  & 3.59  & 3.32 \\
-        3  & 4.13  & 3.69 \\
-        7  & 4.78  & 4.05 \\
+        1 & 0.995 & 1.78 \\
+        3 & 1.41  & 0.950 \\
+        7 & 1.55  & 0.651 \\
         \bottomrule[1pt]
     \end{tabular}
-    \caption{Critical voltages for the QFN package}
+    \caption{GND and VCC bounce (QFN)}
+    \label{tab:qfn_bounce}
 \end{table}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{r|c}
+        \toprule[1pt]
+        \textbf{Outputs} & \textbf{Switching Line[V]} \\
+        \midrule
+        1  & 3.59 \\
+        3  & 4.13 \\
+        7  & 4.78 \\
+        \bottomrule[1pt]
+    \end{tabular}
+    \caption{Switching line maximum voltages (QFN).}
+\end{table}
+
+To determine if the values from the simulation are acceptable we will compare them to the noise margins of the 74ALVC244. As will be shown later the low noise margin $NM_L = 0.6\si{V}$, and the high noise margin $NM_H = 1.1\si{V}$. Meaning that the GND bounce should be no more than $0.6\si{V}$ and the VCC bounce should be no lower than $2.2\si{V}$.
+
+\vspace{10pt}
+Even when taking into the account the voltage loss due to the probe impedance of $50\si{\Omega}$, it looks \textit{pretty bad}. From the simulations we should expect a lot of errors.
 
 \subsubsection{SOIC Package}
 
@@ -228,6 +250,8 @@ The critical voltages are somewhat higher than the QFN package, but we see a sim
     \label{fig:soic_sim_near_far}
 \end{figure}
 
+\newpage
+
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.85\textwidth]{soic_sim_quiet.pdf}
@@ -235,20 +259,35 @@ The critical voltages are somewhat higher than the QFN package, but we see a sim
     \label{fig:soic_sim_quiet}
 \end{figure}
 
-\newpage
+\begin{table}[h]
+    \centering
+    \begin{tabular}{l | r r}
+        \toprule[1pt]
+        \textbf{Num. of Outputs} & \textbf{GND [V]} & \textbf{VCC [V]} \\
+        \midrule
+        1 & 1.15 & 1.58 \\
+        3 & 1.46 & 1.21 \\
+        7 & 1.55 & 1.26 \\
+        \bottomrule[1pt]
+    \end{tabular}
+    \caption{GND and VCC bounce (SOIC)}
+    \label{tab:soic_bounce}
+\end{table}
 
 \begin{table}[h]
     \centering
-    \begin{tabular}{r|c c}
+    \begin{tabular}{r|c}
         \toprule[1pt]
-        \textbf{Outputs} & \textbf{Switching Line[V]} &\textbf{Quiet Line[V]} \\
+        \textbf{Outputs} & \textbf{Switching Line[V]} \\
         \midrule
-        1  & 4.34  & 3.37 \\
-        3  & 4.24  & 3.68 \\
-        7  & 4.22  & 4.01  \\
+        1  & 4.34 \\
+        3  & 4.24 \\
+        7  & 4.22 \\
         \bottomrule[1pt]
     \end{tabular}
-    \caption{Critical voltages for the SOIC package}
+    \caption{Switching line maximum voltages (SOIC).}
 \end{table}
+
+Again with the SOIC package we see that we are \textbf{far} above the noise margins both for GND and VCC bounce. \textit{Let's hope it will be better in the lab...}
 
 \end{document}
